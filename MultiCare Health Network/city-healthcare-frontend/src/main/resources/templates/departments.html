@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Departments | CityCare</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><nav class="navbar"><div class="container nav-inner"><a class="brand" href="/"><span class="logo">+</span> CityCare</a><div class="nav-links"><a href="/doctors">Find Doctors</a><a href="/patient-login">Patient Login</a><a href="/doctor-login">Doctor Login</a></div></div></nav>
+<div class="container page-header"><h1>Medical Departments</h1><p class="muted">Find specialized doctors by department.</p></div>
+<section class="section" style="padding-top:10px"><div class="container"><div id="list" class="grid grid-4"></div></div></section>
+<script src="/js/data.js"></script><script>
+list.innerHTML=departments.map(d=>`<a class="card dept-card" href="/doctors?dept=${d.id}"><div class="dept-icon">${d.icon}</div><h3>${d.name}</h3><p class="muted">${d.desc}</p><span class="tag">${doctors.filter(x=>x.dept===d.id).length} doctors</span></a>`).join("");
+</script><script src="/js/language.js"></script></body></html>

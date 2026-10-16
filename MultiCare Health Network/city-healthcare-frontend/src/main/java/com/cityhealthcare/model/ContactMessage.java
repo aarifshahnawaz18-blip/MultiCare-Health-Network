@@ -1,0 +1,3 @@
+package com.cityhealthcare.model;
+import jakarta.persistence.*; import java.time.LocalDateTime;
+@Entity @Table(name="contact_messages") public class ContactMessage { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @Column(nullable=false,length=120) private String name; @Column(nullable=false,length=30) private String number; @Column(nullable=false,length=2000) private String message; private LocalDateTime createdAt=LocalDateTime.now(); public ContactMessage(){} public ContactMessage(String n,String p,String m){name=n;number=p;message=m;} public Long getId(){return id;} public String getName(){return name;} public String getNumber(){return number;} public String getMessage(){return message;} public LocalDateTime getCreatedAt(){return createdAt;} }
